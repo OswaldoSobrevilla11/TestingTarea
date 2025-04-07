@@ -19,14 +19,14 @@ test("dummy test", () => {
 });
 
 
-import { superHeros } from "./superHeros"; // Ajusta la ruta
-import * as heroUtils from "./getFlyingSuperHeros"; // Para acceder a getFlyingSuperHeros como mock
+import { superHeros } from "./superHeros"; 
+import * as heroUtils from "./getFlyingSuperHeros"; 
 
 describe("getFlyingSuperHeros", () => {
   const mockGetFlyingSuperHeros = jest.fn(heroUtils.getFlyingSuperHeros);
 
   beforeEach(() => {
-    jest.clearAllMocks(); // Limpia llamadas previas antes de cada test
+    jest.clearAllMocks(); 
   });
 
   it("should return an empty array if no superheroes have the 'Fly' power", () => {
