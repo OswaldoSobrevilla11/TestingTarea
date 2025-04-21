@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "../sharedComponent/theme";
 import EasyButton from "../sharedComponent/EasyButton";
 
-// Método personalizado renderWithProviders
 function renderWithProviders(ui, { theme = "light", ...options } = {}) {
   function Wrapper({ children }) {
     return <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>;

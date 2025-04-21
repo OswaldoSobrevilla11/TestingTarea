@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import UseCounterHook from "../sharedComponent/UseCounterHook"; // Ajusta la ruta según tu estructura de archivos
+import UseCounterHook from "../sharedComponent/UseCounterHook"; 
 
 describe("UseCounterHook Component", () => {
   test("renders with the initial count set to 0", () => {
@@ -17,7 +17,7 @@ describe("UseCounterHook Component", () => {
     const incrementButton = screen.getByText(/Increment/i);
     const counterDisplay = screen.getByTestId("counter");
 
-    await userEvent.click(incrementButton); // Simula un clic en el botón de incremento
+    await userEvent.click(incrementButton); 
     expect(counterDisplay).toHaveTextContent("Counter: 1");
   });
 
@@ -27,7 +27,7 @@ describe("UseCounterHook Component", () => {
     const decrementButton = screen.getByText(/Decrement/i);
     const counterDisplay = screen.getByTestId("counter");
 
-    await userEvent.click(decrementButton); // Simula un clic en el botón de decremento
+    await userEvent.click(decrementButton); 
     expect(counterDisplay).toHaveTextContent("Counter: -1");
   });
 
@@ -38,12 +38,10 @@ describe("UseCounterHook Component", () => {
     const decrementButton = screen.getByText(/Decrement/i);
     const counterDisplay = screen.getByTestId("counter");
 
-    // Incrementar dos veces
     await userEvent.click(incrementButton);
     await userEvent.click(incrementButton);
     expect(counterDisplay).toHaveTextContent("Counter: 2");
 
-    // Decrementar una vez
     await userEvent.click(decrementButton);
     expect(counterDisplay).toHaveTextContent("Counter: 1");
   });

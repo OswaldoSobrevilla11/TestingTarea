@@ -1,6 +1,5 @@
 import { renderHook, act } from "@testing-library/react";
-import useCounter from "../sharedComponent/useCounter"; // Ajusta la ruta según tu estructura
-
+import useCounter from "../sharedComponent/useCounter"; 
 describe("useCounter Hook", () => {
   test("should allow customization of the initial count", () => {
     const { result } = renderHook(() => useCounter({ initialCount: 10, step: 1 }));
