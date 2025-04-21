@@ -9,6 +9,11 @@ module.exports = {
   moduleNameMapper: {
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
   },
+  globals: {
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.app.json",
+    },
+  },  
   collectCoverageFrom: ["src/**/*.{ts,tsx, js,jsx}"],
   collectCoverage: true,
   coverageThreshold: {

@@ -46,3 +46,58 @@ test('counter increments and decrements when the buttons are clicked', () => {
   })
 
   */
+
+  import React from "react";
+  import { act } from "react-dom/test-utils";
+  import { createRoot } from "react-dom/client";
+  import Counter from "./Counter"; 
+  
+  describe("Counter Component Tests", () => {
+    let container: HTMLDivElement;
+  
+    beforeEach(() => {
+      container = document.createElement("div");
+      document.body.appendChild(container);
+    });
+  
+    afterEach(() => {
+      document.body.removeChild(container);
+      container = null!;
+    });
+  
+    it("renders the Counter component with buttons and initial count", () => {
+      act(() => {
+        const root = createRoot(container);
+        root.render(<Counter />);
+      });
+  
+      const buttons = container.querySelectorAll("button");
+      const message = container.querySelector("h1");
+  
+      expect(buttons.length).toBe(2); 
+      expect(message?.textContent).toBe("Counter: 0"); 
+    });
+  
+    it("increments and decrements the counter on button clicks", () => {
+      act(() => {
+        const root = createRoot(container);
+        root.render(<Counter />);
+      });
+  
+      const buttons = container.querySelectorAll("button");
+      const incrementButton = buttons[0];
+      const decrementButton = buttons[1];
+      const message = container.querySelector("h1");
+  
+      act(() => {
+        incrementButton.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+      });
+      expect(message?.textContent).toBe("Counter: 1");
+  
+      act(() => {
+        decrementButton.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+      });
+      expect(message?.textContent).toBe("Counter: 0");
+    });
+  });
+  
