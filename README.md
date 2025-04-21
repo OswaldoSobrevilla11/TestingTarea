@@ -1,4 +1,4 @@
 # Testing Tarea
 
-#Ejercicios 00, 01 y 02 
+#Ejercicios 00 al 10
 #Equipo22
