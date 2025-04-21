@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/exercise/02-Snapshots/SuperHeros/superHeros.ts</title>
+    <title>Code coverage report for src/exercise/sharedComponent/UseCounterHook.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">src/exercise/02-Snapshots/SuperHeros</a> superHeros.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/exercise/sharedComponent</a> UseCounterHook.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -79,9 +79,13 @@
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -90,33 +94,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const superHeros = [
-  { name: "Superman", power: ["Fly", "Super Strength"] },
-  { name: "Hulk", power: ["Super Strength", "Regeneration"] },
-  {
-    name: "IronMan",
-    power: ["Intelligence", "Technology", "Fly", "Billionaire"],
-  },
-  { name: "SpiderMan", power: ["Agility", "Spider-Sense"] },
-  { name: "CaptainAmerica", power: ["Leadership", "Super Strength"] },
-  { name: "BlackWidow", power: ["Agility", "Intelligence"] },
-  { name: "GreenLantern", power: ["Energy Manipulation", "Fly"] },
-  { name: "Wolverine", power: ["Regeneration", "Claws"] },
-  { name: "Thor", power: ["Thunder Control", "Super Strength"] },
-  { name: "Batman", power: ["Intelligence", "Martial Arts", "Billionaire"] },
-  { name: "Flash", power: ["Super Speed", "Time Travel"] },
-  // { name: "WonderWoman", power: ["Super Strength", "Agility", "Fly"] },
-  // { name: "Aquaman", power: ["Water Control", "Super Strength"] },
-];
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import useCounter from "./useCounter";
+&nbsp;
+const UseCounterHook: React.FC = () =&gt; {
+  const { count, increment, decrement } = useCounter({ initialCount: 0, step: 1 });
+&nbsp;
+  return (
+    &lt;div&gt;
+      &lt;h1 data-testid="counter"&gt;Counter: {count}&lt;/h1&gt;
+      &lt;button onClick={increment}&gt;Increment&lt;/button&gt;
+      &lt;button onClick={decrement}&gt;Decrement&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+&nbsp;
+export default UseCounterHook;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -126,14 +120,14 @@
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2025-04-21T21:26:55.361Z
             </div>
-        <script src="../../../../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../../../../sorter.js"></script>
-        <script src="../../../../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     
